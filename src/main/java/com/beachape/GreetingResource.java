@@ -22,16 +22,18 @@ public class GreetingResource {
 
     // Pretend this is something coming from a 3rd party lib, like Guava
     // ImmutableList
+    @Schema(type = SchemaType.ARRAY)
     public record ImmutableList<T>(List<T> items) {
     }
 
-    public record Greeting(String message) {
+    @Schema(description = "A greeting message")
+    public record Greeting(
+            @Schema(description = "The message to be displayed") String message) {
     }
 
     public record Response(
             @Schema(
                 description = "A list of messages",
-                implementation = Greeting[].class)
-            ImmutableList<Greeting> greetings) {
+                implementation = Greeting[].class) ImmutableList<Greeting> greetings) {
     }
 }
