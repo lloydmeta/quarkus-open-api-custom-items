@@ -1,0 +1,36 @@
+---
+openapi: 3.1.0
+components:
+  schemas:
+    Response:
+      type: object
+      properties:
+        greetings:
+          description: A list of messages
+          type: array
+          items:
+            type: object
+            properties:
+              message:
+                type: string
+paths:
+  /hello:
+    get:
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Response"
+      summary: Hello
+      tags:
+      - Greeting Resource
+info:
+  title: quarkus-openapi-bug API
+  version: 1.0.0-SNAPSHOT
+servers:
+- url: http://localhost:8080
+  description: Auto generated value
+- url: http://0.0.0.0:8080
+  description: Auto generated value
