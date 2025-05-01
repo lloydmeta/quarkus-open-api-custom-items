@@ -2,6 +2,13 @@
 openapi: 3.1.0
 components:
   schemas:
+    Greeting:
+      description: A greeting message
+      type: object
+      properties:
+        message:
+          type: string
+          description: The message to be displayed
     ImmutableList:
       type: array
     Response:
@@ -13,10 +20,12 @@ components:
           items:
             type: array
             items:
+              description: A greeting message
               type: object
               properties:
                 message:
                   type: string
+                  description: The message to be displayed
 paths:
   /hello:
     get:
