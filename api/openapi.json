@@ -9,10 +9,13 @@
             "description" : "A list of messages",
             "type" : "array",
             "items" : {
-              "type" : "object",
-              "properties" : {
-                "message" : {
-                  "type" : "string"
+              "type" : "array",
+              "items" : {
+                "type" : "object",
+                "properties" : {
+                  "message" : {
+                    "type" : "string"
+                  }
                 }
               }
             }

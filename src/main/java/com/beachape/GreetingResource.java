@@ -31,8 +31,7 @@ public class GreetingResource {
     public record Response(
             @Schema(
                 description = "A list of messages",
-                implementation = Greeting.class,
-                type = SchemaType.ARRAY)
+                implementation = Greeting[].class)
             ImmutableList<Greeting> greetings) {
     }
 }
